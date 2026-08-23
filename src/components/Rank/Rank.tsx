@@ -1,0 +1,13 @@
+interface RankProps {
+  name: string;
+  entries: number;
+}
+
+const Rank = ({ name, entries }: RankProps) => (
+  <div>
+    <div className="white f3">{`${name}, your current rank is...`}</div>
+    <div className="white f1">{entries}</div>
+  </div>
+);
+
+export default Rank;
