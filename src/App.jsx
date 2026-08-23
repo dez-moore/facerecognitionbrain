@@ -7,7 +7,8 @@ import Rank from './components/Rank/Rank';
 import FaceRegonition from './components/FaceRecognition/FaceRecognition';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
-import Particles from 'react-particles-js';
+import Particles, { ParticlesProvider } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 
 
@@ -134,9 +135,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Particles className='particles'
-          params={particalConst} />
+      <ParticlesProvider init={loadSlim}>
+        <div className="App">
+        <Particles className='particles' options={particalConst} />
         <Naviation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/>
         { this.state.route === 'home' ? 
           <div>
@@ -148,7 +149,8 @@ class App extends Component {
           : (this.state.route === 'signin' ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} /> : 
               <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
             ) }
-      </div>
+        </div>
+      </ParticlesProvider>
     );
   }
   

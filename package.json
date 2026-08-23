@@ -3,23 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "clarifai": "^2.9.1",
-    "eslint-utils": ">=1.4.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-particles-js": "^2.7.0",
-    "react-scripts": "3.1.0",
-    "react-tilt": "^0.1.4",
+    "@tsparticles/react": "^4.1.1",
+    "@tsparticles/slim": "^4.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-parallax-tilt": "^1.7.320",
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "browserslist": {
     "production": [
@@ -32,5 +27,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^30.0.1",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   }
 }
